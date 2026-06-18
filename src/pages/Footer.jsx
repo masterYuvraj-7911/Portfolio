@@ -148,7 +148,7 @@ export default function Footer() {
               color: "#8011ff",
             }}
           >
-            Designed & Developed by Yuvraj
+            Designed & Developed by Yuvraj Kumar
           </motion.p>
         </motion.div>
       </div>
