@@ -10,7 +10,11 @@ const skills = [
   "CSS",
   "JAVASCRIPT",
   "GSAP",
-  "THREE JS"
+  "THREE JS",
+  "NODE.js",
+  "GIT-GITHUB",
+  "Framer-motion",
+  "NPM-NPX",
 ];
 
 export default function Skills() {
