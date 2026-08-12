@@ -11,7 +11,6 @@ import Footer from "./pages/Footer";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Skills from "./pages/Skills";
-import Testimonials from "./pages/Testimonials";
 
 // Assets
 import HomeImg from "./assets/HomeImg.png";
@@ -85,7 +84,6 @@ const App = () => {
       <Skills />
       <Projects />
       <Experience />
-      <Testimonials />
       <Contact />
       <Footer />
     </div>

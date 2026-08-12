@@ -28,7 +28,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="relative bg-black py-32 overflow-hidden"
+      className="relative bg-black py-20 overflow-hidden"
     >
       {/* Glow */}
       <div className="absolute top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/10 blur-[180px]" />
@@ -39,7 +39,7 @@ export default function Experience() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-24"
+          className="text-center mb-16"
         >
           <span className="uppercase tracking-[0.4em] text-primary text-sm">
             Career Journey
@@ -81,7 +81,7 @@ export default function Experience() {
                 }}
                 className="
                   relative
-                  mb-24
+                  mb-16
                   md:grid
                   md:grid-cols-2
                   md:gap-20
