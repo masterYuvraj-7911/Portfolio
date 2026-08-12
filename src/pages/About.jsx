@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import avatar from "../assets/avator.png";
+import AboutImg from "../assets/AboutImg.png";
 import HeroBtn from "../components/HeroBtn";
 
 const container = {
@@ -52,7 +52,7 @@ const About = () => {
             className="hidden md:flex justify-center shrink-0"
           >
             <img
-              src={avatar}
+              src={AboutImg}
               alt="profile"
               className="
                 w-80

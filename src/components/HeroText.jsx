@@ -1,6 +1,6 @@
-import Typewriter from "../components/Typeriter";
+import Typewriter from "./Typewiter";
 import { motion } from "framer-motion";
-import astronaut from "../assets/home.PNG";
+import HomeImg from "../assets/HomeImg.png";
 import HeroBtn from "./HeroBtn";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
@@ -93,7 +93,7 @@ const HeroText = () => {
       {/* RIGHT */}
       <div>
         <motion.img
-          src={astronaut}
+          src={HomeImg}
           className="
             relative
             h-full

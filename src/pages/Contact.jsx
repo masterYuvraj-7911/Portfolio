@@ -4,8 +4,7 @@ import { motion } from "framer-motion";
 
 import ParticlesBackground from "../components/ParticleBackground";
 import Input from "../components/Input";
-
-import float from "../assets/Astra.png";
+import ContactImg from "../assets/ContactImg.png";
 
 const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
@@ -198,7 +197,7 @@ export default function Contact() {
             </motion.h1>
 
             <motion.img
-              src={float}
+              src={ContactImg}
               alt="Astronaut"
               animate={{ y: [0, -15, 0] }}
               transition={{

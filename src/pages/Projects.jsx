@@ -1,8 +1,8 @@
 import ProjectCard from "../components/ProjectsCard";
 
-import project1Desktop from "../assets/project1-desktop.png";
-import project2Desktop from "../assets/project2-desktop.png";
-import project3Desktop from "../assets/project3-desktop.png";
+import project1Desktop from "../assets/project1-desktop.jpg";
+import project2Desktop from "../assets/project2-desktop.jpg";
+import project3Desktop from "../assets/project3-desktop.jpg";
 
 const projects = [
   {
