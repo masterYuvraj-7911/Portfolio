@@ -1,5 +1,8 @@
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { ReactLenis } from "lenis/react";
+import "lenis/dist/lenis.css";
 
 import CustomCursor from "./components/CustomCursor";
 import Navbar from "./components/Navbar";
@@ -9,7 +12,7 @@ import Contact from "./pages/Contact";
 import Experience from "./pages/Experience";
 import Footer from "./pages/Footer";
 import Home from "./pages/Home";
-import Projects from "./pages/Projects";
+// import Projects from "./pages/Projects";
 import Skills from "./pages/Skills";
 
 // Assets
@@ -22,7 +25,6 @@ import project1 from "./assets/project1-desktop.jpg";
 import project2 from "./assets/project2-desktop.jpg";
 import project3 from "./assets/project3-desktop.jpg";
 
-
 const App = () => {
   const [loading, setLoading] = useState(true);
 
@@ -34,7 +36,7 @@ const App = () => {
       Logo,
       project1,
       project2,
-      project3
+      project3,
     ];
 
     Promise.all(
@@ -56,8 +58,8 @@ const App = () => {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 bg-black flex items-center justify-center">
-        <h1 className="text-white text-4xl md:text-6xl font-bold">
+      <div className="fixed inset-0 flex items-center justify-center bg-black">
+        <h1 className="text-4xl font-bold text-white md:text-6xl">
           LOADING...
         </h1>
       </div>
@@ -65,28 +67,34 @@ const App = () => {
   }
 
   return (
-    <div className="relative text-white gradient">
-      <CustomCursor />
+    <ReactLenis root options={{ lerp: 0.05, smoothWheel: true }}>
+      <div className="relative text-white gradient">
+        <CustomCursor />
 
-      <Navbar />
+        <Navbar />
 
-      <Home />
+        <Home />
 
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <About />
-      </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <About />
+        </motion.div>
 
-      <Skills />
-      <Projects />
-      <Experience />
-      <Contact />
-      <Footer />
-    </div>
+        <Skills />
+
+        {/* <Projects /> */}
+
+        <Experience />
+
+        <Contact />
+
+        <Footer />
+      </div>
+    </ReactLenis>
   );
 };
 

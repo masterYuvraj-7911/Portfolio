@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import AboutImg from "../assets/AboutImg.png";
+// import AboutImg from "../assets/AboutImg.png";
+import AboutImg from "../assets/Developer.png";
 import HeroBtn from "../components/HeroBtn";
 
 const container = {

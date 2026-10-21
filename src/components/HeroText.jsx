@@ -5,7 +5,7 @@ import HeroBtn from "./HeroBtn";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { FaYoutube } from "react-icons/fa";
+// import { FaYoutube } from "react-icons/fa";
 
 const HeroText = () => {
   return (
@@ -31,18 +31,16 @@ const HeroText = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          Yuvraj Kumar
+          Yuvraj Kumar.
         </motion.h1>
 
         <motion.p
-          className="mt-4 text-gray-300 text-[16px] sm:text-lg max-w-xl leading-relaxed"
+          className="mt-4 text-zinc-500 text-[10px] sm:text-[14px] max-w-xl leading-relaxed"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.9 }}
         >
-          I turn complex ideas into seamless, high-impact web experiences —
-          building modern, scalable, and lightning-fast applications that make a
-          difference.
+          I specialize in transforming ideas into engaging digital experiences through clean code, thoughtful design, and modern web technologies. I enjoy building responsive, high-performance applications that solve real-world problems, deliver seamless user experiences, and combine functionality with simplicity.
         </motion.p>
 
         {/* BUTTONS */}
@@ -86,7 +84,7 @@ const HeroText = () => {
 
           <FaXTwitter className="text-white hover:text-primary hover:scale-110 transition-all cursor-pointer" />
 
-          <FaYoutube className="text-white hover:text-primary hover:scale-110 transition-all cursor-pointer" />
+          {/* <FaYoutube className="text-white hover:text-primary hover:scale-110 transition-all cursor-pointer" /> */}
         </motion.div>
       </div>
 
