@@ -83,6 +83,7 @@ const HeroText = () => {
       <div>
         <motion.img
           src={HomeImg}
+          alt="Astronaut img"
           className="relative h-full max-h-[80vh] mt-20 hidden min-[850px]:block max-w-125 drop-shadow-[0_0_50px_rgba(128,17,255,0.35)] hover:scale-[1.12] transition-all duration-200"
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
