@@ -50,18 +50,17 @@ const About = () => {
         <div className="flex items-center justify-between gap-16">
           <motion.div
             variants={item}
-            className="hidden md:flex justify-center shrink-0"
+            className="hidden md:flex justify-center shrink-0 overflow-hidden rounded-2xl border border-border"
           >
             <img
               src={AboutImg}
               alt="profile"
               className="
                 w-80
-                rounded-3xl
-                border border-border
                 shadow-[0_0_40px_rgba(128,17,255,0.2)]
                 hover:border-border-hover
                 transition-all duration-300
+                hover:scale-125
               "
             />
           </motion.div>

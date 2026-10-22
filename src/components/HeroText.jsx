@@ -1,4 +1,4 @@
-import Typewriter from "./Typewiter";
+import Typewriter from "./Typewirter";
 import { motion } from "framer-motion";
 import HomeImg from "../assets/HomeImg.png";
 import HeroBtn from "./HeroBtn";
@@ -18,7 +18,7 @@ const HeroText = () => {
 
         <motion.h2
           className="text-5xl md:text-5xl font-bold mb-2 text-primary"
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 200 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
@@ -27,7 +27,7 @@ const HeroText = () => {
 
         <motion.h1
           className="max-[430px]:text-[14vw] text-[60px] lg:text-[70px] font-extrabold leading-18"
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 200 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
@@ -35,18 +35,18 @@ const HeroText = () => {
         </motion.h1>
 
         <motion.p
-          className="mt-4 text-zinc-500 text-[10px] sm:text-[14px] max-w-xl leading-relaxed"
-          initial={{ opacity: 0, y: 50 }}
+          className="mt-4 text-zinc-500 text-[18px] max-w-xl leading-relaxed"
+          initial={{ opacity: 0, y: 200 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.9 }}
         >
-          I specialize in transforming ideas into engaging digital experiences through clean code, thoughtful design, and modern web technologies. I enjoy building responsive, high-performance applications that solve real-world problems, deliver seamless user experiences, and combine functionality with simplicity.
+          I build responsive, high-performance web applications with clean code, modern technologies, and intuitive designs that solve real-world problems.
         </motion.p>
 
         {/* BUTTONS */}
         <motion.div
           className="flex gap-4 mt-10"
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 200 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.2 }}
         >
@@ -60,21 +60,12 @@ const HeroText = () => {
 
         {/* SOCIALS */}
         <motion.div
-          className="
-            flex gap-6 mt-12 text-4xl p-3 w-fit rounded-2xl
-            bg-secondary
-            backdrop-blur-xl
-            border border-border
-            hover:border-border-hover
-            shadow-[0_0_25px_rgba(128,17,255,0.15)]
-            hover:shadow-[0_0_40px_rgba(128,17,255,0.35)]
-            transition-all duration-300
-          "
-          initial={{ opacity: 0, scale: 0.5 }}
+          className="flex gap-6 mt-12 text-4xl p-3 w-fit rounded-2xl bg-secondary backdrop-blur-xl border border-border hover:border-border-hover shadow-[0_0_25px_rgba(128,17,255,0.15)] hover:shadow-[0_0_40px_rgba(128,17,255,0.35)] transition-all duration-300"
+          initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
-            duration: 0.5,
-            delay: 1.5,
+            duration: 1,
+            delay: 1,
             type: "spring",
           }}
         >
@@ -92,15 +83,7 @@ const HeroText = () => {
       <div>
         <motion.img
           src={HomeImg}
-          className="
-            relative
-            h-full
-            max-h-[80vh]
-            hidden
-            min-[850px]:block
-            max-w-125
-            drop-shadow-[0_0_50px_rgba(128,17,255,0.35)]
-          "
+          className="relative h-full max-h-[80vh] mt-20 hidden min-[850px]:block max-w-125 drop-shadow-[0_0_50px_rgba(128,17,255,0.35)] hover:scale-[1.12] transition-all duration-200"
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 1.8 }}

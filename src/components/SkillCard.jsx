@@ -4,8 +4,8 @@ const SkillCard = ({ index, skill }) => {
       key={index}
       className="
         shrink-0
-        px-8
-        py-4
+        px-6
+        py-3
         rounded-xl
         border
         border-border
@@ -17,7 +17,7 @@ const SkillCard = ({ index, skill }) => {
         duration-300
       "
     >
-      <span className="text-primary font-medium text-lg">
+      <span className="text-primary font-medium text-[24px]">
         {skill}
       </span>
     </div>

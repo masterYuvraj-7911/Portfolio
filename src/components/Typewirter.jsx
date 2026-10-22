@@ -4,10 +4,15 @@ const texts = [
   "HTML",
   "CSS",
   "JavaScript",
-  "React",
-  "Node.js",
+  "React.js",
+  "Tailwind CSS",
+  "Lenis",
+  "Framer motion",
   "GSAP",
-  "Three.js",
+  "MongoDB",
+  "Express",
+  "NodeJS",
+  "ThreeJS",
 ];
 
 export default function Typewriter() {

@@ -2,8 +2,8 @@ import { useEffect, useRef } from "react";
 import { TbUfo } from "react-icons/tb";
 import "../CSS/cursor.css";
 
-const MAX_PARTICLES = 20;
-const PARTICLE_INTERVAL = 50;
+const MAX_PARTICLES = 200;
+const PARTICLE_INTERVAL = 0;
 
 const CustomCursor = () => {
   const cursorRef = useRef(null);

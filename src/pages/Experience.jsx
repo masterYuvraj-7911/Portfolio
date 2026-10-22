@@ -41,11 +41,8 @@ export default function Experience() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="uppercase tracking-[0.4em] text-primary text-sm">
-            Career Journey
-          </span>
 
-          <h2 className="text-4xl md:text-6xl font-bold text-white mt-4">
+          <h2 className="text-4xl md:text-6xl font-bold text-primary mt-4">
             Experience
           </h2>
 

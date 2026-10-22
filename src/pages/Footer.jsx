@@ -32,7 +32,7 @@ export default function Footer() {
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
       variants={container}
-      className="relative overflow-hidden border-t border-border bg-black py-16"
+      className="relative overflow-hidden border-t border-border bg-black py-16 pb-8"
     >
       {/* Animated Glow */}
       <motion.div
@@ -64,8 +64,8 @@ export default function Footer() {
           </h2>
 
           <p className="text-gray-400 mt-4 max-w-xl mx-auto">
-            Full Stack Developer crafting modern web experiences
-            with React, Node.js and creative animations.
+            MERN Stack Developer crafting modern web experiences
+            with creative animations.
           </p>
         </motion.div>
 

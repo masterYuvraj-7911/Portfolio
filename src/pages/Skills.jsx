@@ -1,86 +1,101 @@
+
 import { useEffect, useRef } from "react";
-import { motion, useMotionValue, useAnimationFrame } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useAnimationFrame,
+} from "framer-motion";
+import { useLenis } from "lenis/react";
 import SkillCard from "../components/SkillCard";
 
 const skills = [
-  "Tailwind CSS",
-  "REACT",
-  "GIT",
+  "Git & Github",
   "HTML",
   "CSS",
-  "JAVASCRIPT",
+  "JavaScript",
+  "React.js",
+  "Tailwind CSS",
+  "Lenis",
+  "Framer motion",
   "GSAP",
-  "THREE JS",
-  "NODE.js",
-  "GIT-GITHUB",
-  "Framer-motion",
-  "NPM-NPX",
+  "MongoDB",
+  "Express",
+  "NodeJS",
+  "ThreeJS",
 ];
+
+const REPEAT = 6;
+
+const speed = {
+  normal: 200,
+  initial: -300,
+  smoothness: 0.006,
+};
 
 export default function Skills() {
   const x = useMotionValue(0);
 
-  const speed = useRef(-40);
-  const targetSpeed = useRef(-40);
+  const currentSpeed = useRef(speed.initial);
+  const targetSpeed = useRef(-speed.normal);
 
   const containerRef = useRef(null);
   const trackWidth = useRef(0);
 
-  const items = [...skills, ...skills];
+  // Lenis changes direction only, not speed
+  useLenis(({ direction }) => {
+    if (direction === 1) {
+      targetSpeed.current = -speed.normal;
+    } else if (direction === -1) {
+      targetSpeed.current = speed.normal;
+    }
+  });
+
+  const items = Array.from(
+    { length: REPEAT },
+    () => skills
+  ).flat();
 
   useEffect(() => {
     const calculateWidth = () => {
       if (containerRef.current) {
-        trackWidth.current = containerRef.current.scrollWidth / 2;
+        trackWidth.current =
+          containerRef.current.scrollWidth / REPEAT;
       }
     };
 
     calculateWidth();
+
+    const observer = new ResizeObserver(calculateWidth);
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
     window.addEventListener("resize", calculateWidth);
 
-    return () => window.removeEventListener("resize", calculateWidth);
-  }, []);
-
-  useEffect(() => {
-    let lastScroll = window.scrollY;
-
-    const handleScroll = () => {
-      const current = window.scrollY;
-
-      if (current > lastScroll) {
-        targetSpeed.current = -80;
-      } else {
-        targetSpeed.current = 80;
-      }
-
-      lastScroll = current;
-
-      clearTimeout(handleScroll.timeout);
-
-      handleScroll.timeout = setTimeout(() => {
-        targetSpeed.current = targetSpeed.current > 0 ? 40 : -40;
-      }, 150);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", calculateWidth);
     };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useAnimationFrame((_, delta) => {
-    speed.current += (targetSpeed.current - speed.current) * 0.05;
-
-    let moveBy = speed.current * (delta / 1000);
-
-    let nextX = x.get() + moveBy;
-
     const width = trackWidth.current;
 
-    if (width > 0) {
-      if (nextX <= -width) {
-        nextX += width;
-      }
-      if (nextX >= 0) {
+    if (!width) return;
+
+    currentSpeed.current +=
+      (targetSpeed.current - currentSpeed.current) *
+      (1 - Math.exp(-speed.smoothness * delta));
+
+    let nextX =
+      x.get() + currentSpeed.current * (delta / 1000);
+
+    // Seamless infinite loop
+    if (nextX <= -width || nextX >= 0) {
+      nextX = ((nextX % width) + width) % width;
+
+      if (nextX > 0) {
         nextX -= width;
       }
     }
@@ -90,8 +105,10 @@ export default function Skills() {
 
   return (
     <section className="relative overflow-hidden bg-black py-16">
-      <div className="mx-auto max-w-7xl text-center mb-10">
-        <h2 className="text-4xl font-bold text-primary">My Skills</h2>
+      <div className="mx-auto mb-10 max-w-7xl text-center">
+        <h2 className="text-6xl font-bold text-primary">
+          My Skills
+        </h2>
 
         <p className="mt-2 text-gray-400">
           Modern Applications | Modern Technologies
@@ -102,13 +119,13 @@ export default function Skills() {
         <motion.div
           ref={containerRef}
           style={{ x }}
-          className="flex gap-8 w-max"
+          className="flex w-max gap-8"
         >
           {items.map((skill, index) => (
             <SkillCard
               skill={skill}
               index={index}
-              key={index}
+              key={`${skill}-${index}`}
             />
           ))}
         </motion.div>
