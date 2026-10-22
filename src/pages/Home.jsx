@@ -4,10 +4,7 @@ import ParticleBackground from "../components/ParticleBackground";
 
 const Home = () => {
   return (
-    <section
-      id="home"
-      className="w-full h-screen relative top-0 left-0 bg-black overflow-hidden"
-    >
+    <section id="home" className="w-full h-screen relative top-0 left-0 bg-black overflow-hidden" >
       <ParticleBackground />
 
       <div className="absolute inset-0 top-0 left-0">
